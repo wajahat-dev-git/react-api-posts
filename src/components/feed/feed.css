@@ -1,0 +1,9 @@
+.feedContainer {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.feedWrapper {
+  padding: 20px;
+  width: 40rem;
+}
