@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+.topbarContainer {
+  display: flex;
+  justify-content: space-between;
+  min-height: 5vh;
+  width: 100%;
+  background-color: blue;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+}
+.topbarContainer p:hover {
+  color: burlywood;
+  cursor: pointer;
+}
+.topbarContainer p {
+  margin-left: 1rem;
+  padding-top: 5px;
+}
+.logoutBtn {
+  border: none;
+  margin-right: 1rem;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  background-color: grey;
+  font-size: large;
+  cursor: pointer;
+}

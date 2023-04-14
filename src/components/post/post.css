@@ -1,0 +1,82 @@
+.postContainer {
+  width: 100%;
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 2px 15px -1px rgba(0, 0, 0, 0.54);
+  box-shadow: 1px 2px 15px -1px rgba(0, 0, 0, 0.54);
+  margin: 40px 0;
+}
+
+.postWrapper {
+  padding: 10px;
+}
+.postTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+.postHr {
+  margin-bottom: 2rem;
+}
+.postUsername {
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  color: maroon;
+}
+.fa {
+  cursor: pointer;
+}
+.postCenter {
+  margin-bottom: 1.5rem;
+}
+.postTitle {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.postBottom {
+  display: flex;
+  justify-content: center;
+}
+.postCommentText {
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+.postCommentText:hover {
+  color: blue;
+}
+
+.editBtn,
+.cancelBtn,
+.saveBtn,
+.deleteBtn {
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+  margin-left: 5px;
+  font-size: smaller;
+  padding: 5px;
+}
+.editBtn,
+.saveBtn {
+  background-color: green;
+  color: white;
+}
+.deleteBtn,
+.cancelBtn {
+  background-color: red;
+  color: white;
+}
+.comments {
+  display: flex;
+  flex-direction: column;
+}
+
+.commentsName {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+.editInput {
+  width: 50%;
+  height: 4rem;
+}
