@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './post.css';
 import { Users } from '../../dummyData';
 import { get_comments } from "../../services/posts";
+import './post.css';
 
 const Post = ({ post }) => {
   const [editMode, setEditMode] = useState(false);

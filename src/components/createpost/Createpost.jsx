@@ -1,25 +1,26 @@
-import { useState } from 'react';
-
+import { useContext, useState } from 'react';
+import { UserContext } from "../../utilis/utilis";
 import Post from '../post/Post';
 import './create.css';
 
-const Create = () => {
-  const [state, setState] = useState({ title: '', body: '', posts: [] });
+const Createpost = () => {
+  const [postWrapper, setState] = useState({ title: '', body: '' });
+  const { addPost } = useContext(UserContext);
 
   const handleTitleChange = (e) => {
-    setState({ ...state, title: e.target.value });
+    setState({ ...postWrapper, title: e.target.value });
   };
 
   const handleBodyChange = (e) => {
-    setState({ ...state, body: e.target.value });
+    setState({ ...postWrapper, body: e.target.value });
   };
 
   const handleCreatePost = () => {
     const newPost = {
       userId: 1,
       id: Date.now(),
-      title: state.title.trim(),
-      body: state.body.trim()
+      title: postWrapper.title.trim(),
+      body: postWrapper.body.trim()
     };
 
     if (newPost.title === '' && newPost.body === '') {
@@ -28,7 +29,8 @@ const Create = () => {
     }
 
     if (newPost.title !== '' && newPost.body !== '') {
-      setState({ title: '', body: '', posts: [...state.posts, newPost] });
+      addPost(newPost);
+      setState({ title: '', body: '' });
     }
   };
 
@@ -39,13 +41,13 @@ const Create = () => {
           <input
             placeholder="Title"
             className="createInput"
-            value={state.title}
+            value={postWrapper.title}
             onChange={handleTitleChange}
           />
           <input
             placeholder="Body"
             className="createInput"
-            value={state.body}
+            value={postWrapper.body}
             onChange={handleBodyChange}
           />
         </div>
@@ -56,12 +58,15 @@ const Create = () => {
           </button>
         </div>
       </div>
-      {state.posts.map((post) => (
-        <Post key={post.id} post={post} />
-      ))}
-
+      <UserContext.Consumer>
+        {(context) =>
+          context.posts.map((post) => (
+            <Post key={post.id} post={post} />
+          ))
+        }
+      </UserContext.Consumer>
     </div>
   );
 };
 
-export default Create;
+export default Createpost;
