@@ -1,4 +1,4 @@
-import React, { useContext,useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../utilis/utilis";
 import "./login.css";
@@ -22,6 +22,7 @@ const Login = () => {
       alert("Invalid email or password.");
       return;
     }
+    localStorage.setItem("currentUser", JSON.stringify(user));
     setCurrUser(user);
     navigate("/");
   };

@@ -1,4 +1,4 @@
-import Create from "../create/Create";
+import Createpost from "../createpost/Createpost";
 import Post from "../post/Post";
 import "./feed.css";
 
@@ -11,7 +11,7 @@ const Feed = (props) => {
   return (
     <div className="feedContainer">
       <div className="feedWrapper">
-        <Create onCreatePost={handleCreateNewPost} />
+        <Createpost onCreatePost={handleCreateNewPost} />
         {props.posts.map((p) => (
           <Post key={p.id} post={p} />
         ))}
