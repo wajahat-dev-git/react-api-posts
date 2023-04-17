@@ -1,6 +1,8 @@
 import { useContext, useState } from 'react';
+
 import { UserContext } from "../../utilis/utilis";
 import Post from '../post/Post';
+
 import './create.css';
 
 const Createpost = () => {

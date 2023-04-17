@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Users } from '../../dummyData';
 import { get_comments } from "../../services/posts";
+
 import './post.css';
 
 const Post = ({ post }) => {
