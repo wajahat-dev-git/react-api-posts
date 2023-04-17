@@ -19,6 +19,26 @@ function App() {
               </UserContext.Consumer>
             }
           />
+          <Route
+            path="/login"
+            element={
+              <UserContext.Consumer>
+                {(context) =>
+                  context.currUser ? <Navigate to="/" /> : <Login />
+                }
+              </UserContext.Consumer>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <UserContext.Consumer>
+                {(context) =>
+                  context.currUser ? <Navigate to="/" /> : <Signup />
+                }
+              </UserContext.Consumer>
+            }
+          />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
